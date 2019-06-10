@@ -10,7 +10,7 @@ A node app that searches a MySQL Database for all products and allows the user t
 - Run `node bamazonCustomer.js`
 
 ## Link to Demo Video:
-- TBD
+- https://drive.google.com/file/d/1vauPf9MwciMiej_qyRe9CQQglGLglmt0/view
 
 ## Maintained By:
 - Jim Clark
