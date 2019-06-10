@@ -53,11 +53,12 @@ function getQuantity() {
     }
   }).then(answers => {
     purchaseQuantity = answers.quantity;
-    connection.query('SELECT stock_quantity FROM products WHERE ?', {
+    connection.query('SELECT * FROM products WHERE ?', {
       item_id: parseInt(selectedItem)
     }, function (err, res) {
       if (err) throw err
       var quantityInStock = res[0].stock_quantity;
+      var orderTotal = 0;
       if (quantityInStock >= purchaseQuantity) {
         connection.query("UPDATE products SET ? WHERE ?", [{
             stock_quantity: quantityInStock - purchaseQuantity
@@ -70,7 +71,10 @@ function getQuantity() {
             throw err
           }
         })
+        console.log(res[0].price);
+        orderTotal = res[0].price * purchaseQuantity;
         console.log(`\n***** Your order was successful! *****\n`);
+        console.log(`Your Order Total is: $${orderTotal.toFixed(2)}`)
         displayAllProducts();
       } else {
         console.log("\n *****Insufficient quantity! Please place a new order *****\n");
