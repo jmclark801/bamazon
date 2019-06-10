@@ -1,0 +1,45 @@
+DROP DATABASE IF EXISTS bamazon_db;
+CREATE DATABASE bamazon_db;
+USE bamazon_db;
+
+CREATE TABLE products (
+item_id INTEGER NOT NULL AUTO_INCREMENT,
+product_name VARCHAR(100),
+department_name VARCHAR(100),
+price FLOAT(7, 2),
+stock_quantity INTEGER,
+PRIMARY KEY (item_id)
+);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("Fancy Chair", "Furniture", 899.99, 10);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("Couch", "Furniture", 1349.99, 3);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("My Life as a Cat", "Books", 9.99, 12);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("The Secret Life of Cats", "Books", 8.79, 139);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("50' Toshiba TV", "Electronics", 899.99, 10);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("Xbox One", "Electronics", 299.99, 59);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("Sony Playstation", "Electronics", 399.99, 7);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("Nintendo Switch", "Electronics", 349.99, 11);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("Star Wars Battlefront II", "Electronics", 39.99, 999);
+
+INSERT INTO PRODUCTS (product_name, department_name, price, stock_quantity)
+VALUES ("To Kill a Mockingbird", "Books", 24.99, 10);
+
+-- SELECT * FROM products;
+
